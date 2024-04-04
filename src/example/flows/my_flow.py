@@ -1,8 +1,7 @@
 import asyncio
 from prefect import flow, task
 
-from example.utils.env import get_deployment_name
-from example.utils.prefect import get_logger
+from example.utils.prefect import get_logger, get_deployment_name
 
 
 @task()
