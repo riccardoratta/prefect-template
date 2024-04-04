@@ -1,0 +1,18 @@
+[project]
+name = "example"
+version = "0.1.0"
+description = "Default template for Prefect project"
+authors = [{ name = "Riccardo Ratta", email = "riccardoratta@gmail.com" }]
+dependencies = ["prefect>=2.16.8", "python-dotenv>=1.0.1"]
+requires-python = "==3.10.*"
+readme = "README.md"
+license = { text = "MIT" }
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.scripts]
+serve = "./serve.sh"
+
+[tool.pdm.dev-dependencies]
+dev = ["ipykernel>=6.29.4"]
