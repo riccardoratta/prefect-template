@@ -7,6 +7,7 @@ _filter_patterns = [
     r"Finished in state Completed\(\)",
     r"Downloading flow code from storage at '.+'",
     r"Opening process...",
+    r"Created subflow run '.+' for flow '.+'",
 ]
 
 
