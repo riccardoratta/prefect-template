@@ -1,6 +1,6 @@
 import asyncio
 
-from example.utils.prefect import get_deployment_name, get_logger
+from example.utils.prefect import get_deployment_name, get_logger, get_version
 from prefect import flow, task
 
 
@@ -12,7 +12,7 @@ def a_task(another_parameter: str):
 
 
 @flow()
-def my_flow(some_parameter: int):
+def my_flow(some_parameter: int, version=get_version()):
     l = get_logger()
     l.info("Starting my flow..")
     for i in range(some_parameter):

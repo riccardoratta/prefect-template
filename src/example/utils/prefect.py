@@ -2,6 +2,7 @@ import logging
 import os
 import socket
 
+import toml
 from dotenv import load_dotenv
 from prefect import get_run_logger
 
@@ -20,3 +21,8 @@ load_dotenv()
 
 def get_deployment_name():
     return os.getenv("DEPLOYMENT_NAME", socket.gethostname())
+
+
+def get_version() -> str:
+    with open("pyproject.toml", "r") as reader:
+        return toml.load(reader)["project"]["version"]
