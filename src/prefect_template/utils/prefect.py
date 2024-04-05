@@ -16,10 +16,8 @@ def get_logger():
         return logger
 
 
-load_dotenv()
-
-
 def get_deployment_name():
+    load_dotenv()
     return os.getenv("DEPLOYMENT_NAME", socket.gethostname())
 
 
