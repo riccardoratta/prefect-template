@@ -6,15 +6,15 @@ from prefect import flow, task
 
 @task()
 def a_task(another_parameter: str):
-    l = get_logger()
-    l.info(f"Converting the string {another_parameter} to uppercase.")
+    log = get_logger()
+    log.info(f"Converting the string {another_parameter} to uppercase.")
     return another_parameter.upper()
 
 
 @flow()
 def my_flow(some_parameter: int, version=get_version()):
-    l = get_logger()
-    l.info("Starting my flow..")
+    log = get_logger()
+    log.info("Starting my flow..")
     for i in range(some_parameter):
         a_task(f"example-{i}")
 
