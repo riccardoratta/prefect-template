@@ -5,5 +5,7 @@
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.codeActionsOnSave": {
         "source.organizeImports": "always"
-    }
+    },
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
 }
