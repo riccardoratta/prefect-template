@@ -1,6 +1,7 @@
 import logging
 import os
 import socket
+from typing import Callable
 
 import toml
 from dotenv import load_dotenv
@@ -14,6 +15,10 @@ def get_logger():
         logger = logging.getLogger()
         logger.setLevel(logging.INFO)
         return logger
+
+
+def get_flow_name(flow: Callable):
+    return flow.__name__.replace("_", "-") + ":" + get_deployment_name()
 
 
 def get_deployment_name():

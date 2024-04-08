@@ -1,7 +1,7 @@
 import asyncio
 
 from prefect import flow, task
-from prefect_template.utils.prefect import get_deployment_name, get_logger, get_version
+from prefect_template.utils.prefect import get_flow_name, get_logger, get_version
 
 
 @task()
@@ -20,4 +20,4 @@ def my_flow(some_parameter: int, version=get_version()):
 
 
 if __name__ == "__main__":
-    asyncio.run(my_flow.serve(f"my-flow:{get_deployment_name()}"))
+    asyncio.run(my_flow.serve(get_flow_name(my_flow)))
