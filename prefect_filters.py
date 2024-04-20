@@ -8,6 +8,8 @@ _filter_patterns = [
     r"Downloading flow code from storage at '.+'",
     r"Opening process...",
     r"Created subflow run '.+' for flow '.+'",
+    r"Runner '.+' submitting flow run '.+'",
+    r"Completed submission of flow run '.+'",
 ]
 
 
